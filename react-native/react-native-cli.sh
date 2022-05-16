@@ -43,9 +43,9 @@ if [ $answer == 'y' ] || [ $answer == 'Y' ];
   else exit 0
 fi
 
-read shell
 echo "\n\nEnter (zshrc|bash_profile) to add environment variable."
 echo "Enter (n|N) to skip."
+read shell
 if [ $shell == 'zshrc' ]
 then
   echo "export ANDROID_HOME=$HOME/Library/Android/sdk" >> ~/.zshrc
