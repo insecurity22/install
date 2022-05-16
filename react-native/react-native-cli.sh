@@ -45,6 +45,8 @@ fi
 
 echo "\n\nEnter (zshrc|bash_profile) to add environment variable."
 echo "Enter (n|N) to skip."
+echo "Your current shell is ↓"
+echo $SHELL
 read shell
 if [ $shell == 'zshrc' ]
 then
