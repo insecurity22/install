@@ -21,6 +21,7 @@ echo "\n\nAfter installing Xcode from Appstore, enter (y|Y)."
 read answer
 if [ $answer == 'y' ] || [ $answer == 'Y' ];
   then
+    echo "Select Y"
   else exit 0
 fi
 
