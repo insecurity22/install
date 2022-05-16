@@ -1,40 +1,40 @@
-echo -e "Install homebrew"
+echo "Install homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew --version
 
-echo -e "Install Nodejs"
+echo "Install Nodejs"
 brew install node
 node -–version
 npm --version
 
-echo -e "Install watchman"
+echo "Install watchman"
 xcode-select --install
 brew install watchman
 watchman --version
 
-echo -e "Install react-native-cli"
+echo "Install react-native-cli"
 npm install -g npm@8.9.0
 npm install -g react-native-cli
 npx react-native --version
 
-echo -e "After installing Xcode from Appstore, enter (y|Y)."
+echo "After installing Xcode from Appstore, enter (y|Y)."
 read answer
 if [ ${answer} == 'y' ] || [ ${answer} == 'Y' ] 
   then
   else exit 0
 fi
 
-echo -e "Install Cocoapods"
+echo "Install Cocoapods"
 sudo gem install cocoapods
 pod --version
 
-echo -e "Install jdk"
+echo "Install jdk"
 brew tap AdoptOpenJDK/openjdk
 brew install --cask adoptopenjdk8
 java -version
 
-echo -e "After installing Android studio, enter (y|Y)."
-echo -e "https://developer.android.com/studio"
+echo "After installing Android studio, enter (y|Y)."
+echo "https://developer.android.com/studio"
 read answer
 if [ ${answer} == 'y' ] || [ ${answer} == 'Y' ] 
   then
@@ -42,8 +42,8 @@ if [ ${answer} == 'y' ] || [ ${answer} == 'Y' ]
 fi
 
 read shell
-echo -e "Enter (zshrc|bash_profile) to add environment variable."
-echo -e "Enter (n|N) to skip."
+echo "Enter (zshrc|bash_profile) to add environment variable."
+echo "Enter (n|N) to skip."
 if [ ${shell} == 'zshrc' ]
 then
   echo "export ANDROID_HOME=$HOME/Library/Android/sdk" >> ~/.zshrc
