@@ -36,8 +36,7 @@ java -version
 echo "\n\nAfter installing Android studio, enter (y|Y)."
 echo "https://developer.android.com/studio"
 read answer
-if [ $answer == 'y' ] || [ $answer == 'Y' ] 
-  then
+if [ $answer == 'y' ] || [ $answer == 'Y' ]; then
   else exit 0
 fi
 
