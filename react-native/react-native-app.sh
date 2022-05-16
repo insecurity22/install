@@ -1,11 +1,11 @@
-echo -e "Create react native app"
-echo -e "native app "
+echo "Create react native app"
+echo "native app "
 read name
 npx react-native init ${name}
 
 cd ./${name}
 
-echo -e "Start (ios|android)"
+echo "Start (ios|android)"
 read start
 if [ ${start} == 'ios' ]
 then
