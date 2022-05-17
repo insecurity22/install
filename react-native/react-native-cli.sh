@@ -58,6 +58,7 @@ then
   echo "export PATH=$PATH:$ANDROID_HOME/platform-tools" >> ~/.zshrc
   source ~/.zshrc
 elif [ $shell == 'bash_profile' ];
+then
   echo "export ANDROID_HOME=$HOME/Library/Android/sdk" >> ~/.bash_profile
   echo "export PATH=$PATH:$ANDROID_HOME/emulator" >> ~/.bash_profile
   echo "export PATH=$PATH:$ANDROID_HOME/tools" >> ~/.bash_profile
@@ -65,6 +66,8 @@ elif [ $shell == 'bash_profile' ];
   echo "export PATH=$PATH:$ANDROID_HOME/platform-tools" >> ~/.bash_profile
   source ~/.bash_profile
 elif [ $shell == 'n' ] || [ $shell == 'N' ];
+then
+  :
 else exit 0
 fi
 
