@@ -44,5 +44,6 @@ npm run android // android로
 
 ### 빌드
 ```
+cd ./nativeApp/android/app
 keytool -genkey -v -keystore [key-name].keystore -alias [key alias] -keyalg RSA -keysize 2048 -validity 10000
 ```
