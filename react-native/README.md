@@ -14,6 +14,7 @@
   3) google apis intel x86 atom system image
   4) google apis intel x86 atom_64 system image
 
+
 ### 환경변수 설정
 ```
 vi ~/.zshrc
@@ -29,6 +30,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
 source ~/.zshrc
 또는 source ~/.bash_profile
+
+adb로 확인
 ```
 
 ### 프로젝트 생성 및 실행
