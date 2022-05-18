@@ -45,9 +45,7 @@ fi
 
 echo "\n\nEnter (zshrc|bash_profile) to add environment variable."
 echo "Enter (n|N) to skip.\n"
-echo "Your current shell is"
-echo $SHELL
-echo "\n"
+echo "Your current shell is $SHELL"
 read shell
 if [ $shell == 'zshrc' ];
 then
@@ -69,7 +67,7 @@ then
 else exit 0
 fi
 
-echo "Please enter adb"
+echo "\n\nPlease enter adb"
 echo "after enter"
 echo "source ~/.zshrc"
 echo "OR"
