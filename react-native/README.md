@@ -48,3 +48,37 @@ cd ./nativeApp/android/app
 keytool -genkey -v -keystore [key-name].keystore -alias [key alias] -keyalg RSA -keysize 2048 -validity 10000
 ex) keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 ```
+
+#### 프로젝트 안에 추가
+```
+// android/gradle.properties
+MYAPP_RELEASE_STORE_FILE=my-release-key.keystore
+MYAPP_RELEASE_ALIAS=my-key-alias
+MYAPP_RELEASE_STORE_PASSWORD=******
+MYAPP_RELEASE_KEY_PASSWORD=******
+```
+```
+// android/app/build.gradle
+...
+android {
+    ...
+    defaultConfig { ... }
+    signingConfigs {
+        release {
+            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
+                storeFile file(MYAPP_RELEASE_STORE_FILE)
+                storePassword MYAPP_RELEASE_STORE_PASSWORD
+                keyAlias MYAPP_RELEASE_KEY_ALIAS
+                keyPassword MYAPP_RELEASE_KEY_PASSWORD
+            }
+        }
+    }
+    buildTypes {
+        release {
+            ...
+            signingConfig signingConfigs.release
+        }
+    }
+}
+...
+```
