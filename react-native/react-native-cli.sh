@@ -67,17 +67,10 @@ then
 else exit 0
 fi
 
-echo "\n\nPlease enter adb"
-echo "after enter"
+echo "\n\nPlease enter adb after enter "
 echo "source ~/.zshrc"
 echo "OR"
 echo "source ~/.bash_profile"
-read answer
-if [ $answer == 'y' ] || [ $answer == 'Y' ]; 
-  then
-    :
-  else exit 0
-fi
 
 # source ~/.zshrc
 # source ~/.bash_profile
