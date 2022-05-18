@@ -8,11 +8,11 @@
 7. jdk
 8. android studio
 - sdk 설치(sdk manager)
-  - * android 9.0(Pie)
-  - android sdk platform 29
-  - intel x86 atom system image
-  - google apis intel x86 atom system image
-  - google apis intel x86 atom_64 system image
+  - android 9.0(Pie)
+  1) android sdk platform 29
+  2) intel x86 atom system image
+  3) google apis intel x86 atom system image
+  4) google apis intel x86 atom_64 system image
 
 ### 환경변수 설정
 ```
