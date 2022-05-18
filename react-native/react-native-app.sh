@@ -1,5 +1,5 @@
 echo "Create react native app"
-echo "native app "
+echo "Please Input your project name"
 read name
 npx react-native init ${name}
 
