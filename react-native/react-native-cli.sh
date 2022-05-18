@@ -44,8 +44,8 @@ if [ $answer == 'y' ] || [ $answer == 'Y' ];
 fi
 
 echo "\n\nEnter (zshrc|bash_profile) to add environment variable."
-echo "Enter (n|N) to skip."
-echo "Your current shell is ↓"
+echo "Enter (n|N) to skip.\n"
+echo "Your current shell is"
 echo $SHELL
 echo "\n"
 read shell
@@ -56,7 +56,6 @@ then
   echo "export PATH=\$PATH:\$ANDROID_HOME/tools" >> ~/.zshrc
   echo "export PATH=\$PATH:\$ANDROID_HOME/tools/bin" >> ~/.zshrc
   echo "export PATH=\$PATH:\$ANDROID_HOME/platform-tools" >> ~/.zshrc
-  source ~/.zshrc
 elif [ $shell == 'bash_profile' ];
 then
   echo "export ANDROID_HOME=$HOME/Library/Android/sdk" >> ~/.bash_profile
@@ -64,11 +63,24 @@ then
   echo "export PATH=\$PATH:\$ANDROID_HOME/tools" >> ~/.bash_profile
   echo "export PATH=\$PATH:\$ANDROID_HOME/tools/bin" >> ~/.bash_profile
   echo "export PATH=\$PATH:\$ANDROID_HOME/platform-tools" >> ~/.bash_profile
-  source ~/.bash_profile
 elif [ $shell == 'n' ] || [ $shell == 'N' ];
 then
   :
 else exit 0
 fi
 
-adb
+echo "Please enter adb"
+echo "after enter"
+echo "source ~/.zshrc"
+echo "OR"
+echo "source ~/.bash_profile"
+read answer
+if [ $answer == 'y' ] || [ $answer == 'Y' ]; 
+  then
+    :
+  else exit 0
+fi
+
+# source ~/.zshrc
+# source ~/.bash_profile
+# adb
