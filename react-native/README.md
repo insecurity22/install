@@ -88,5 +88,6 @@ android {
 ```
 cd android
 ./gradlew assembleRelease
+
 // android/app/build/outputs/apk/release/app-release.apk
 ```
