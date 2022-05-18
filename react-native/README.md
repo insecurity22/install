@@ -43,14 +43,15 @@ npm run android // android로
 ```
 
 ### 빌드
+
+#### - 프로젝트 안에 추가
+#### 1) 서명 키 생성
 ```
 cd ./nativeApp/android/app
 keytool -genkey -v -keystore [key-name].keystore -alias [key alias] -keyalg RSA -keysize 2048 -validity 10000
 ex) keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 ```
-
-#### 프로젝트 안에 추가
-#### 1) 서명 키 생성
+#### 2) 서명 키 설정
 ```
 // android/gradle.properties
 MYAPP_RELEASE_STORE_FILE=my-release-key.keystore
@@ -58,7 +59,6 @@ MYAPP_RELEASE_ALIAS=my-key-alias
 MYAPP_RELEASE_STORE_PASSWORD=******
 MYAPP_RELEASE_KEY_PASSWORD=******
 ```
-#### 2) 서명 키 설정
 ```
 // android/app/build.gradle
 ...
