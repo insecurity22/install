@@ -41,3 +41,8 @@ npx react-native init nativeApp
 npm run ios // ios로 실행
 npm run android // android로 
 ```
+
+### 빌드
+```
+keytool -genkey -v -keystore [key-name].keystore -alias [key alias] -keyalg RSA -keysize 2048 -validity 10000
+```
