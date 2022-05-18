@@ -50,6 +50,7 @@ ex) keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -ke
 ```
 
 #### 프로젝트 안에 추가
+#### 1) 서명 키 생성
 ```
 // android/gradle.properties
 MYAPP_RELEASE_STORE_FILE=my-release-key.keystore
@@ -57,6 +58,7 @@ MYAPP_RELEASE_ALIAS=my-key-alias
 MYAPP_RELEASE_STORE_PASSWORD=******
 MYAPP_RELEASE_KEY_PASSWORD=******
 ```
+#### 2) 서명 키 설정
 ```
 // android/app/build.gradle
 ...
@@ -81,4 +83,10 @@ android {
     }
 }
 ...
+```
+#### 3) 빌드
+```
+cd android
+./gradlew assembleRelease
+// android/app/build/outputs/apk/release/app-release.apk
 ```
