@@ -19,7 +19,7 @@ npx react-native --version
 
 echo "\n\nAfter installing Xcode from Appstore, enter (y|Y)."
 read answer
-if [ $answer == 'y' ] || [ $answer == 'Y' ];
+if [ $answer -eq 'y' ] || [ $answer -eq 'Y' ];
   then
     :
   else exit 0
@@ -37,7 +37,7 @@ java -version
 echo "\n\nAfter installing Android studio, enter (y|Y)."
 echo "https://developer.android.com/studio"
 read answer
-if [ $answer == 'y' ] || [ $answer == 'Y' ]; 
+if [ $answer -eq 'y' ] || [ $answer -eq 'Y' ]; 
   then
     :
   else exit 0
@@ -47,21 +47,21 @@ echo "\n\nEnter (zshrc|bash_profile) to add environment variable."
 echo "Enter (n|N) to skip.\n"
 echo "Your current shell is $SHELL"
 read shell
-if [ $shell == 'zshrc' ];
+if [ $shell -eq 'zshrc' ];
 then
   echo "export ANDROID_HOME=$HOME/Library/Android/sdk" >> ~/.zshrc
   echo "export PATH=\$PATH:\$ANDROID_HOME/emulator" >> ~/.zshrc
   echo "export PATH=\$PATH:\$ANDROID_HOME/tools" >> ~/.zshrc
   echo "export PATH=\$PATH:\$ANDROID_HOME/tools/bin" >> ~/.zshrc
   echo "export PATH=\$PATH:\$ANDROID_HOME/platform-tools" >> ~/.zshrc
-elif [ $shell == 'bash_profile' ];
+elif [ $shell -eq 'bash_profile' ];
 then
   echo "export ANDROID_HOME=\$HOME/Library/Android/sdk" >> ~/.bash_profile
   echo "export PATH=\$PATH:\$ANDROID_HOME/emulator" >> ~/.bash_profile
   echo "export PATH=\$PATH:\$ANDROID_HOME/tools" >> ~/.bash_profile
   echo "export PATH=\$PATH:\$ANDROID_HOME/tools/bin" >> ~/.bash_profile
   echo "export PATH=\$PATH:\$ANDROID_HOME/platform-tools" >> ~/.bash_profile
-elif [ $shell == 'n' ] || [ $shell == 'N' ];
+elif [ $shell -eq 'n' ] || [ $shell -eq 'N' ];
 then
   :
 else exit 0
