@@ -34,44 +34,5 @@ brew tap AdoptOpenJDK/openjdk
 brew install --cask adoptopenjdk8
 java -version
 
-echo "\n\nAfter installing Android studio, enter (y|Y)."
+echo "\n\nPlease install android studio."
 echo "https://developer.android.com/studio"
-read answer
-if [ $answer -eq 'y' ] || [ $answer -eq 'Y' ]; 
-  then
-    :
-  else exit 0
-fi
-
-echo "\n\nEnter (zshrc|bash_profile) to add environment variable."
-echo "Enter (n|N) to skip.\n"
-echo "Your current shell is $SHELL"
-read shell
-if [ $shell -eq 'zshrc' ];
-then
-  echo "export ANDROID_HOME=$HOME/Library/Android/sdk" >> ~/.zshrc
-  echo "export PATH=\$PATH:\$ANDROID_HOME/emulator" >> ~/.zshrc
-  echo "export PATH=\$PATH:\$ANDROID_HOME/tools" >> ~/.zshrc
-  echo "export PATH=\$PATH:\$ANDROID_HOME/tools/bin" >> ~/.zshrc
-  echo "export PATH=\$PATH:\$ANDROID_HOME/platform-tools" >> ~/.zshrc
-elif [ $shell -eq 'bash_profile' ];
-then
-  echo "export ANDROID_HOME=\$HOME/Library/Android/sdk" >> ~/.bash_profile
-  echo "export PATH=\$PATH:\$ANDROID_HOME/emulator" >> ~/.bash_profile
-  echo "export PATH=\$PATH:\$ANDROID_HOME/tools" >> ~/.bash_profile
-  echo "export PATH=\$PATH:\$ANDROID_HOME/tools/bin" >> ~/.bash_profile
-  echo "export PATH=\$PATH:\$ANDROID_HOME/platform-tools" >> ~/.bash_profile
-elif [ $shell -eq 'n' ] || [ $shell -eq 'N' ];
-then
-  :
-else exit 0
-fi
-
-echo "\n\nPlease enter adb after enter "
-echo "source ~/.zshrc"
-echo "OR"
-echo "source ~/.bash_profile"
-
-# source ~/.zshrc
-# source ~/.bash_profile
-# adb
