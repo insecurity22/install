@@ -56,7 +56,7 @@ then
   echo "export PATH=\$PATH:\$ANDROID_HOME/platform-tools" >> ~/.zshrc
 elif [ $shell == 'bash_profile' ];
 then
-  echo "export ANDROID_HOME=$HOME/Library/Android/sdk" >> ~/.bash_profile
+  echo "export ANDROID_HOME=\$HOME/Library/Android/sdk" >> ~/.bash_profile
   echo "export PATH=\$PATH:\$ANDROID_HOME/emulator" >> ~/.bash_profile
   echo "export PATH=\$PATH:\$ANDROID_HOME/tools" >> ~/.bash_profile
   echo "export PATH=\$PATH:\$ANDROID_HOME/tools/bin" >> ~/.bash_profile
